@@ -26,6 +26,14 @@
                 <li><a href="/">Home</a></li>
                 @endif
             </ul>
+            @if (!Auth::guest())
+                <form class="navbar-form navbar-left" action="{{ route('search') }}" method="GET">
+                    <div class="form-group">
+                        <input type="search" class="form-control" name="search" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-success">Search</button>
+              </form>
+            @endif
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

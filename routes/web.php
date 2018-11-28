@@ -17,6 +17,8 @@ Route::resource('/posts', 'PostsController');
 //Users
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/visit/{user}', 'HomeController@visit');
+Route::get('/search', 'HomeController@search')->name('search');
+
 //Follow
 Route::post('/follow', 'FollowsController@followUser')->name('followUser');
 //Pages

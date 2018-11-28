@@ -57,5 +57,12 @@ class HomeController extends Controller
 
         return view('visit')->with($data);
     }
+
+    public function search(Request $request){
+        $searchKey = $request->search;
+        $users = User::search($searchKey)->get();
+
+        return view('search')->with('users', $users);
+    }
     
 }
